@@ -10,14 +10,10 @@ namespace Niawa.Utilities
     public abstract class ThreadedWorker
     {
 
-        /*Parameters*/
-
         private SortedList<NiawaThreadState, DateTime> _stateHistory = new SortedList<NiawaThreadState, DateTime>();
         private Thread t;
         private DateTime _stateDate = DateTime.MinValue;
         private NiawaThreadState _state = NiawaThreadState.UNKNOWN;
-
-        /*Properties*/
 
         //description
         public string Description { get; set; }
@@ -89,7 +85,7 @@ namespace Niawa.Utilities
         }
 
         /// <summary>
-        /// Suspend ThreadeWorker
+        /// Suspend ThreadedWorker
         /// </summary>
         public void Suspend()
         {
@@ -183,7 +179,7 @@ namespace Niawa.Utilities
         public abstract void ThreadImpl();
 
         /// <summary>
-        /// Update stsate history with a specified state and date
+        /// Update state history with a specified state and date
         /// </summary>
         /// <param name="state"></param>
         private void UpdateStateHistory(NiawaThreadState state, DateTime stateDate)
